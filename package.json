@@ -1,5 +1,5 @@
 {
-  "name": "shortly-ec2-api",
+  "name": "nestjs-ddd-onion-architecture",
   "version": "0.0.1",
   "description": "Shortly back-end in On-premises EC2 architecture",
   "author": "Muryllo Pimenta de Oliveira",

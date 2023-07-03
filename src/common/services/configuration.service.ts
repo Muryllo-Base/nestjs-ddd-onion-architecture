@@ -2,7 +2,7 @@ import { json } from 'express';
 import * as compression from 'compression';
 import { StoreConfig } from 'cache-manager';
 import { JwtModuleOptions } from '@nestjs/jwt';
-import { ModuleRef, Reflector } from '@nestjs/core';
+import { Reflector } from '@nestjs/core';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ThrottlerModuleOptions } from '@nestjs/throttler';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
