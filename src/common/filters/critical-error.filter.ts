@@ -10,7 +10,7 @@ import {
 export class CriticalErrorFilter implements ExceptionFilter<Error> {
 
   getExceptionName(exception: Error) {
-    return snakeCase('StatusFatal' + exception.name).toLowerCase();
+    return snakeCase('StatusCritical' + exception.name).toLowerCase();
   }
 
   catch(exception: Error, host: ArgumentsHost) {

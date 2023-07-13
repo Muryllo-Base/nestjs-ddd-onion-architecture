@@ -1,1 +1,1 @@
-export * from './short-url.dto';
+export * from './live-response.dto';

@@ -1,2 +1,1 @@
-export * from './code.controller';
-export * from './shorten.controller';
+export * from './live.controller';

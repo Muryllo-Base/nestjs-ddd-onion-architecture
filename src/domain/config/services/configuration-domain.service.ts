@@ -28,8 +28,12 @@ import {
   ServerConfigType
 } from 'src/domain/config/slices';
 
-import { ShortUrl } from 'src/domain/business';
-import { CreateTableShortUrlMigration1686805447945 } from 'src/domain/business';
+import { Live } from 'src/domain/business';
+
+import { 
+  AddLivesSeeder1686805447946, 
+  CreateTableLivesMigration1686805447945 
+} from 'src/database';
 
 @Injectable()
 export class ConfigurationDomainService {
@@ -143,7 +147,7 @@ export class ConfigurationDomainService {
       migrationsTableName: this.database.migrationsTable,
       namingStrategy: new SnakeNamingStrategy(),
       entities: this.configureEntities(),
-      migrations: this.configureMigrations()
+      migrations: this.configureMigrations().concat(this.configureSeeders())
     };
   }
 
@@ -155,12 +159,18 @@ export class ConfigurationDomainService {
   }
 
   configureEntities(): Function[] {
-    return [ShortUrl];
+    return [Live];
   }
 
   configureMigrations(): Function[] {
     return [
-      CreateTableShortUrlMigration1686805447945
+      CreateTableLivesMigration1686805447945
+    ];
+  }
+
+  configureSeeders(): Function[] {
+    return [
+      AddLivesSeeder1686805447946
     ];
   }
 

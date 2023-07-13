@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { ConfigurationService, ShortlyService } from 'src/common/services';
+import { ConfigurationService, LiveService } from 'src/common/services';
 
 import { DomainModule } from 'src/domain';
 import { CachingModule } from './caching.module';
@@ -16,11 +16,11 @@ import { ConfigurationModule } from './configuration.module';
   ],
   providers: [
     ConfigurationService,
-    ShortlyService
+    LiveService
   ],
   exports: [
     ConfigurationService,
-    ShortlyService
+    LiveService
   ]
 })
 export class ServicesModule {}

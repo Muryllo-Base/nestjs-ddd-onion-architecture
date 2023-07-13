@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { ShortlyModule } from './shortly.module';
+import { LiveModule } from './live.module';
 
 @Module({
-  imports: [ShortlyModule],
-  exports: [ShortlyModule]
+  imports: [LiveModule],
+  exports: [LiveModule]
 })
 export class BusinessDomainModule { }

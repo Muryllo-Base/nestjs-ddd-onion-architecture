@@ -24,7 +24,7 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
     delete payload.statusCode;
 
     response.status(status).json({
-      timestamp: new Date(),
+      timestamp: new Date().toISOString(),
       path: request.url,
       error: true,
       status: status,

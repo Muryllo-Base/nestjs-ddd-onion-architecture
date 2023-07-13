@@ -6,12 +6,12 @@ import { Reflector } from '@nestjs/core';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ThrottlerModuleOptions } from '@nestjs/throttler';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { NestExpressApplication } from '@nestjs/platform-express';
 
 import {
   CacheModuleOptions,
   ClassSerializerInterceptor,
   ExceptionFilter,
+  INestApplication,
   Injectable,
   NestInterceptor,
   PipeTransform,
@@ -127,8 +127,8 @@ export class ConfigurationService {
       new ValidationPipe({
         transform: true,
         whitelist: true,
-        forbidNonWhitelisted: true
-      })
+        forbidNonWhitelisted: true,
+      }),
     ];
   }
 
@@ -145,7 +145,9 @@ export class ConfigurationService {
       new ResponseInterceptor(reflector),
       new TimeoutInterceptor(),
       new VersionInterceptor(this, reflector),
-      new ClassSerializerInterceptor(reflector)
+      new ClassSerializerInterceptor(reflector, {
+        strategy: 'excludeAll'
+      }),
     ];
   }
 
@@ -164,7 +166,7 @@ export class ConfigurationService {
     return this.configurationDomainService.configureMigrations();
   }
 
-  configureApi(api: NestExpressApplication): NestExpressApplication {
+  configureApi(api: INestApplication): INestApplication {
     const reflector = api.get(Reflector);
 
     api.enableCors(this.configureCors());

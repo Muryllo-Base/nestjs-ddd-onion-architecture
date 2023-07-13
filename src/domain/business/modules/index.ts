@@ -1,2 +1,2 @@
 export * from './business-domain.module';
-export * from './shortly.module';
+export * from './live.module';

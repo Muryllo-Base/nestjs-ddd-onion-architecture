@@ -1,1 +1,1 @@
-export * from './shortly';
+export * from './live';

@@ -22,7 +22,7 @@ import { DomainException } from 'src/domain/exceptions';
 export class DomainModel extends BaseEntity {
 
   @PrimaryGeneratedColumn('uuid')
-  public shortId: string;
+  public id: string;
 
   @CreateDateColumn()
   public createdAt: Date;
@@ -44,7 +44,7 @@ export class DomainModel extends BaseEntity {
 
   toDto<T>(dtoClass: ClassConstructor<T>): T {
     const plain = instanceToPlain(this);
-    return plainToInstance<T, Record<string, any>>(dtoClass, plain);
+    return plainToInstance<T, Record<string, object>>(dtoClass, plain);
   }
 
 }

@@ -1,7 +1,7 @@
 {
   "name": "nestjs-ddd-onion-architecture",
   "version": "0.0.1",
-  "description": "Shortly back-end in On-premises EC2 architecture",
+  "description": "Mimo back-end in On-premises EC2 architecture",
   "author": "Muryllo Pimenta de Oliveira",
   "license": "MIT",
   "private": true,
@@ -51,9 +51,6 @@
     "@types/mime-types": "^2.1.1",
     "@types/node": "18.15.11",
     "@types/randomstring": "^1.1.8",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3",
     "source-map-support": "^0.5.20",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",

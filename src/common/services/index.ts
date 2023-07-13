@@ -1,2 +1,2 @@
 export * from './configuration.service';
-export * from './shortly.service';
+export * from './live.service';
