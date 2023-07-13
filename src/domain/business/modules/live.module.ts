@@ -7,6 +7,7 @@ import {
   FetchOneLiveHandler,
   UpdateLiveHandler,
   DeleteLiveHandler,
+  LiveCreatedEventHandler,
 } from 'src/domain/business/slices/live';
 
 import {
@@ -25,6 +26,7 @@ import {
     FetchOneLiveHandler,
     UpdateLiveHandler,
     DeleteLiveHandler,
+    LiveCreatedEventHandler,
     LiveRepository,
     LiveDomainService
   ],
